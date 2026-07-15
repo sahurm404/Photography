@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - [Your Name / Studio Name]</title>
+  <meta name="description" content="Selected photography works and portfolio by [Your Name].">
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="page-transition">
+
+  <header class="header">
+    <div class="container-fluid nav">
+      <a href="index.html" class="logo">[Name]</a>
+      
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="gallery.html" class="nav-link active">Portfolio</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link">Journal</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="gallery.html" class="nav-link">Portfolio</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="blog.html" class="nav-link">Journal</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+
+  <main>
+    <section class="section container" style="margin-top: var(--header-height);">
+      <div class="reveal text-center" style="margin-bottom: var(--space-xl);">
+        <h1>Selected Works</h1>
+        <p style="margin: 0 auto;">A curated collection of recent moments.</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="gallery-filters reveal reveal-delay-1">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="weddings">Weddings</button>
+        <button class="filter-btn" data-filter="portraits">Portraits</button>
+        <button class="filter-btn" data-filter="editorial">Editorial</button>
+        <button class="filter-btn" data-filter="landscape">Landscape</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid grid-3">
+        <!-- Item 1 -->
+        <a href="#" class="image-card gallery-item reveal" data-category="weddings">
+          <img src="Images/Wedd-1.jpg" alt="Wedding shot" loading="lazy">
+          <div class="image-overlay">
+            <span class="image-category">Weddings</span>
+            <h3 class="image-title">The First Look</h3>
+          </div>
+        </a>
+
+        <!-- Item 2 -->
+        <a href="#" class="image-card gallery-item reveal reveal-delay-1" data-category="portraits">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Portrait shot" loading="lazy">
+          <div class="image-overlay">
+            <span class="image-category">Portraits</span>
+            <h3 class="image-title">Golden Hour</h3>
+          </div>
+        </a>
+
+        <!-- Item 3 -->
+        <a href="#" class="image-card gallery-item reveal reveal-delay-2" data-category="editorial">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Editorial shot" loading="lazy">
+          <div class="image-overlay">
+            <span class="image-category">Editorial</span>
+            <h3 class="image-title">Form & Figure</h3>
+          </div>
+        </a>
+
+        <!-- Item 4 -->
+        <a href="#" class="image-card gallery-item reveal" data-category="landscape">
+          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Landscape shot" loading="lazy">
+          <div class="image-overlay">
+            <span class="image-category">Landscape</span>
+            <h3 class="image-title">Distant Peaks</h3>
+          </div>
+        </a>
+
+        <!-- Item 5 -->
+        <a href="#" class="image-card gallery-item reveal reveal-delay-1" data-category="weddings">
+          <img src="Images/Wedd-114.jpg" alt="Wedding details" loading="lazy">
+          <div class="image-overlay">
+            <span class="image-category">Weddings</span>
+            <h3 class="image-title">Details</h3>
+          </div>
+        </a>
+
+        <!-- Item 6 -->
+        <a href="#" class="image-card gallery-item reveal reveal-delay-2" data-category="portraits">
+          <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Portrait shot" loading="lazy">
+          <div class="image-overlay">
+            <span class="image-category">Portraits</span>
+            <h3 class="image-title">Studio Series</h3>
+          </div>
+        </a>
+        
+        <!-- Item 7 -->
+        <a href="#" class="image-card gallery-item reveal" data-category="weddings">
+          <img src="Images/Wedd-116.jpg" alt="Wedding party" loading="lazy">
+          <div class="image-overlay">
+            <span class="image-category">Weddings</span>
+            <h3 class="image-title">Celebration</h3>
+          </div>
+        </a>
+
+        <!-- Item 8 -->
+        <a href="#" class="image-card gallery-item reveal reveal-delay-1" data-category="editorial">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Editorial style" loading="lazy">
+          <div class="image-overlay">
+            <span class="image-category">Editorial</span>
+            <h3 class="image-title">Urban Contrast</h3>
+          </div>
+        </a>
+
+        <!-- Item 9 -->
+        <a href="#" class="image-card gallery-item reveal reveal-delay-2" data-category="landscape">
+          <img src="https://images.unsplash.com/photo-1476610182048-b716b8518aae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Landscape" loading="lazy">
+          <div class="image-overlay">
+            <span class="image-category">Landscape</span>
+            <h3 class="image-title">Wanderlust</h3>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox Container -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close Lightbox">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous Image">&#10094;</button>
+    <div class="lightbox-content">
+      <img src="" alt="Enlarged gallery image">
+    </div>
+    <button class="lightbox-next" aria-label="Next Image">&#10095;</button>
+  </div>
+
+  <footer class="footer container">
+    <div class="footer-top">
+      <div class="footer-col reveal">
+        <h4>[Studio Name]</h4>
+        <p style="margin-bottom: 0;">Available worldwide.</p>
+        <p>Based in [City, Country]</p>
+      </div>
+      <div class="footer-col reveal reveal-delay-1">
+        <h4>Inquiries</h4>
+        <a href="mailto:hello@example.com">hello@example.com</a>
+      </div>
+      <div class="footer-col reveal reveal-delay-2">
+        <h4>Socials</h4>
+        <div class="social-links">
+          <a href="#">Instagram</a>
+          <a href="#">Behance</a>
+          <a href="#">Pinterest</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 [Your Name]. All rights reserved.</p>
+      <a href="#">Terms & Conditions</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal - [Your Name / Studio Name]</title>
+  <meta name="description" content="Recent shoots and behind the scenes.">
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="page-transition">
+
+  <header class="header">
+    <div class="container-fluid nav">
+      <a href="index.html" class="logo">[Name]</a>
+      
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="gallery.html" class="nav-link">Portfolio</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link active">Journal</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="gallery.html" class="nav-link">Portfolio</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="blog.html" class="nav-link">Journal</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+
+  <main>
+    <section class="section container" style="margin-top: var(--header-height);">
+      <div class="reveal text-center" style="margin-bottom: var(--space-xl);">
+        <h1>Journal</h1>
+        <p style="margin: 0 auto;">Stories, recent shoots, and behind the scenes.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <!-- Post 1 -->
+        <article class="reveal-left">
+          <a href="#" class="image-card" style="aspect-ratio: 16/9; display: block;">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Blog post image" loading="lazy">
+          </a>
+          <div style="padding: var(--space-sm) 0;">
+            <span class="text-accent" style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Weddings • Oct 12, 2025</span>
+            <h3 style="margin: 0.5rem 0;">A Tuscan Dream Wedding</h3>
+            <p>Golden light, rolling hills, and an intimate celebration that felt like magic. See the highlights from E & J's beautiful day.</p>
+            <a href="#" class="btn" style="padding: 0.5rem 1rem;">Read Post</a>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="reveal-right">
+          <a href="#" class="image-card" style="aspect-ratio: 16/9; display: block;">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Blog post image" loading="lazy">
+          </a>
+          <div style="padding: var(--space-sm) 0;">
+            <span class="text-accent" style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Editorial • Sep 28, 2025</span>
+            <h3 style="margin: 0.5rem 0;">Autumn Lookbook</h3>
+            <p>Collaborating with local designers to capture the rich textures and tones of the new fall collection.</p>
+            <a href="#" class="btn" style="padding: 0.5rem 1rem;">Read Post</a>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="reveal-left">
+          <a href="#" class="image-card" style="aspect-ratio: 16/9; display: block;">
+            <img src="https://images.unsplash.com/photo-1476610182048-b716b8518aae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Blog post image" loading="lazy">
+          </a>
+          <div style="padding: var(--space-sm) 0;">
+            <span class="text-accent" style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Personal • Aug 05, 2025</span>
+            <h3 style="margin: 0.5rem 0;">Icelandic Highlands</h3>
+            <p>A personal journey through the rugged, untouched landscapes of Iceland. Medium format film scans.</p>
+            <a href="#" class="btn" style="padding: 0.5rem 1rem;">Read Post</a>
+          </div>
+        </article>
+
+        <!-- Post 4 -->
+        <article class="reveal-right">
+          <a href="#" class="image-card" style="aspect-ratio: 16/9; display: block;">
+            <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Blog post image" loading="lazy">
+          </a>
+          <div style="padding: var(--space-sm) 0;">
+            <span class="text-accent" style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Behind The Scenes • Jul 15, 2025</span>
+            <h3 style="margin: 0.5rem 0;">What's In My Bag</h3>
+            <p>A detailed breakdown of my go-to gear for an all-day wedding shoot, including backups and film setups.</p>
+            <a href="#" class="btn" style="padding: 0.5rem 1rem;">Read Post</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="flex justify-center reveal" style="margin-top: var(--space-lg);">
+         <button class="btn">Load Older Posts</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <div class="footer-top">
+      <div class="footer-col reveal">
+        <h4>[Studio Name]</h4>
+        <p style="margin-bottom: 0;">Available worldwide.</p>
+        <p>Based in [City, Country]</p>
+      </div>
+      <div class="footer-col reveal reveal-delay-1">
+        <h4>Inquiries</h4>
+        <a href="mailto:hello@example.com">hello@example.com</a>
+      </div>
+      <div class="footer-col reveal reveal-delay-2">
+        <h4>Socials</h4>
+        <div class="social-links">
+          <a href="#">Instagram</a>
+          <a href="#">Behance</a>
+          <a href="#">Pinterest</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 [Your Name]. All rights reserved.</p>
+      <a href="#">Terms & Conditions</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/scroll.js"></script>
+</body>
+</html>

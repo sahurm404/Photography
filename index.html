@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Your Name / Studio Name] - Photography Portfolio</title>
+  <meta name="description" content="High-end photography portfolio. [tagline]">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="page-transition">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container-fluid nav">
+      <a href="index.html" class="logo">[Name]</a>
+      
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="gallery.html" class="nav-link">Portfolio</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link">Journal</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="gallery.html" class="nav-link">Portfolio</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="blog.html" class="nav-link">Journal</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Hero background" class="hero-bg" loading="lazy">
+      <div class="hero-overlay"></div>
+      
+      <div class="container hero-content">
+        <div class="hero-text-reveal">
+          <h1>[Your Name]</h1>
+        </div>
+        <div class="hero-text-reveal delay-1">
+          <p>[tagline - e.g., Capturing light, shadow, and raw emotion.]</p>
+        </div>
+        <div class="hero-text-reveal delay-2" style="margin-top: 2rem;">
+          <a href="gallery.html" class="btn btn-primary">View Selected Work</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Work -->
+    <section class="section container">
+      <div class="reveal">
+        <h2 class="text-accent" style="font-size: 1rem; margin-bottom: 1rem;">Selected Works</h2>
+        <div class="line-divider" style="margin: 0 0 3rem 0;"></div>
+      </div>
+
+      <div class="grid grid-2">
+        <a href="gallery.html" class="image-card reveal-left">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Featured Work 1" loading="lazy">
+          <div class="image-overlay">
+            <span class="image-category">Editorial</span>
+            <h3 class="image-title">Shadow & Light</h3>
+          </div>
+        </a>
+
+        <a href="gallery.html" class="image-card reveal-right" style="margin-top: 4rem;">
+          <img src="Images/Wedd-50.jpg" alt="Featured Work 2" loading="lazy">
+          <div class="image-overlay">
+            <span class="image-category">Weddings</span>
+            <h3 class="image-title">The Vows</h3>
+          </div>
+        </a>
+
+        <a href="gallery.html" class="image-card reveal-left">
+          <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Featured Work 3" loading="lazy">
+          <div class="image-overlay">
+            <span class="image-category">Portraits</span>
+            <h3 class="image-title">Raw Emotion</h3>
+          </div>
+        </a>
+
+        <a href="gallery.html" class="image-card reveal-right" style="margin-top: 4rem;">
+          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Featured Work 4" loading="lazy">
+          <div class="image-overlay">
+            <span class="image-category">Landscape</span>
+            <h3 class="image-title">Vastness</h3>
+          </div>
+        </a>
+      </div>
+
+      <div class="flex justify-center reveal" style="margin-top: 4rem;">
+        <a href="gallery.html" class="btn">Explore Portfolio</a>
+      </div>
+    </section>
+
+    <!-- Intro / Philosophy Snippet -->
+    <section class="section-sm container relative">
+      <div class="line-vertical" style="left: 50%; height: 100%;"></div>
+      <div class="grid grid-2 items-center">
+        <div class="reveal-left" style="padding-right: 2rem; background: var(--color-bg);">
+          <h2 style="font-size: 2rem;">Beyond the Lens</h2>
+          <p>Photography is more than just capturing what is in front of the camera; it is about distilling the essence of a moment into a timeless frame. My approach is deeply rooted in observation, relying on natural light and raw emotion to tell authentic stories.</p>
+          <a href="about.html" class="btn" style="margin-top: 1rem;">Read More</a>
+        </div>
+        <div class="reveal-right">
+          <img src="Images/Wedd-10.jpg" alt="Photographer in action" loading="lazy" style="filter: grayscale(100%);">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer container">
+    <div class="footer-top">
+      <div class="footer-col reveal">
+        <h4>[Studio Name]</h4>
+        <p style="margin-bottom: 0;">Available worldwide.</p>
+        <p>Based in [City, Country]</p>
+      </div>
+      <div class="footer-col reveal reveal-delay-1">
+        <h4>Inquiries</h4>
+        <a href="mailto:hello@example.com">hello@example.com</a>
+      </div>
+      <div class="footer-col reveal reveal-delay-2">
+        <h4>Socials</h4>
+        <div class="social-links">
+          <a href="#">Instagram</a>
+          <a href="#">Behance</a>
+          <a href="#">Pinterest</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 [Your Name]. All rights reserved.</p>
+      <a href="#">Terms & Conditions</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/scroll.js"></script>
+</body>
+</html>

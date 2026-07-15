@@ -1,0 +1,257 @@
+/* css/pages.css */
+
+/* Home Hero */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%; /* for parallax */
+  object-fit: cover;
+  z-index: -2;
+  animation: kenBurns 30s ease-out forwards;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(180deg, rgba(10,10,10,0.15) 0%, transparent 40%, rgba(10,10,10,0.65) 100%);
+  z-index: -1;
+}
+
+.hero-content {
+  z-index: 1;
+}
+
+.hero h1 {
+  margin-bottom: 0;
+}
+
+.hero p {
+  color: var(--color-text);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  max-width: 500px;
+  margin-top: var(--space-md);
+}
+
+/* Gallery Filtering */
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  justify-content: center;
+}
+
+.filter-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.filter-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background-color: var(--color-accent);
+  transition: width var(--transition-fast);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  color: var(--color-text);
+}
+
+.filter-btn.active::after {
+  width: 50%;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  position: relative;
+}
+
+.lightbox-content img {
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  z-index: 1001;
+  padding: 1rem;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  color: var(--color-accent);
+}
+
+.lightbox-close {
+  top: var(--space-md);
+  right: var(--space-md);
+}
+
+.lightbox-prev {
+  left: var(--space-md);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-next {
+  right: var(--space-md);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* About Page */
+.about-hero {
+  margin-top: var(--header-height);
+}
+
+.about-image img {
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  width: 100%;
+}
+
+.gear-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.gear-item h4 {
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+}
+
+.gear-item p {
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+/* Services */
+.pricing-card {
+  border: 1px solid var(--color-border);
+  padding: var(--space-xl) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition-fast);
+}
+
+.pricing-card:hover {
+  border-color: var(--color-accent);
+}
+
+.pricing-price {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: var(--space-md) 0;
+  color: var(--color-accent);
+}
+
+.pricing-features {
+  margin-bottom: var(--space-lg);
+  flex-grow: 1;
+}
+
+.pricing-features li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--color-text-muted);
+}
+
+.pricing-features li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+}
+
+/* Contact */
+.contact-info {
+  margin-bottom: var(--space-xl);
+}
+
+.contact-info h3 {
+  margin-bottom: var(--space-xs);
+}
+
+/* 404 */
+.not-found {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.not-found h1 {
+  font-size: clamp(6rem, 15vw, 12rem);
+  color: var(--color-accent);
+  line-height: 1;
+}

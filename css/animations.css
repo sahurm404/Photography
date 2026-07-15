@@ -1,0 +1,214 @@
+/* css/animations.css — Refined Luxury Edition */
+
+/* ============================================
+   SCROLL REVEAL — clean, no blur, no gimmicks
+   ============================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 1s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.2s; }
+.reveal-delay-2 { transition-delay: 0.4s; }
+.reveal-delay-3 { transition-delay: 0.6s; }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition:
+    opacity 1s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition:
+    opacity 1s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ============================================
+   PAGE LOAD — cinematic curtain lift
+   ============================================ */
+
+.page-curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-bg);
+  z-index: 10000;
+  pointer-events: none;
+  transform-origin: top;
+  animation: curtainLift 1s cubic-bezier(0.77, 0, 0.175, 1) 0.3s forwards;
+}
+
+@keyframes curtainLift {
+  0% { transform: scaleY(1); }
+  100% { transform: scaleY(0); }
+}
+
+/* Page body hidden until curtain lifts */
+.page-transition {
+  opacity: 0;
+  animation: pageReveal 0.6s ease 0.5s forwards;
+}
+
+@keyframes pageReveal {
+  to { opacity: 1; }
+}
+
+/* ============================================
+   HERO TEXT — word-by-word cascade
+   ============================================ */
+
+.hero-text-reveal {
+  overflow: hidden;
+}
+
+.hero-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: wordUp 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes wordUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   LINE DIVIDER — ink stroke
+   ============================================ */
+
+.line-divider {
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.active .line-divider,
+.line-divider.active {
+  transform: scaleX(1);
+}
+
+/* ============================================
+   IMAGE CARDS — smooth elegant hover
+   ============================================ */
+
+.image-card img {
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.image-card:hover img {
+  transform: scale(1.06);
+}
+
+.image-overlay {
+  transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.image-title {
+  transform: translateY(20px);
+  opacity: 0;
+  transition:
+    transform 0.7s cubic-bezier(0.25, 1, 0.5, 1) 0.05s,
+    opacity 0.5s ease 0.05s;
+}
+
+.image-category {
+  transform: translateY(15px);
+  opacity: 0;
+  transition:
+    transform 0.7s cubic-bezier(0.25, 1, 0.5, 1) 0.12s,
+    opacity 0.5s ease 0.12s;
+}
+
+.image-card:hover .image-title,
+.image-card:hover .image-category {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ============================================
+   BUTTONS — sleek fill
+   ============================================ */
+
+.btn::before {
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* ============================================
+   KEN BURNS — hero bg slow zoom
+   ============================================ */
+
+@keyframes kenBurns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+/* ============================================
+   CURSOR
+   ============================================ */
+
+.cursor {
+  transition:
+    width 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    height 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    background-color 0.3s ease;
+}
+
+.cursor.hovering {
+  width: 44px;
+  height: 44px;
+  background-color: rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--color-accent);
+}
+
+/* ============================================
+   UTILITY
+   ============================================ */
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin-slow {
+  animation: spin 25s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}

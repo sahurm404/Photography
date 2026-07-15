@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Not Found - [Your Name / Studio Name]</title>
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="page-transition">
+
+  <header class="header">
+    <div class="container-fluid nav">
+      <a href="index.html" class="logo">[Name]</a>
+      
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="gallery.html" class="nav-link">Portfolio</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link">Journal</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="gallery.html" class="nav-link">Portfolio</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="blog.html" class="nav-link">Journal</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+
+  <main class="not-found container reveal">
+    <div style="position: relative; margin-bottom: var(--space-lg);">
+      <h1 style="margin: 0; z-index: 2; position: relative;">404</h1>
+      <!-- Abstract aperture/frame graphic -->
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: 200px; border: 2px solid var(--color-border); z-index: 1;" class="spin-slow"></div>
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(45deg); width: 200px; height: 200px; border: 2px solid var(--color-border); z-index: 1;" class="spin-slow"></div>
+    </div>
+    
+    <h2 style="font-size: 2rem;">Out of Focus</h2>
+    <p>The page you are looking for doesn't exist or has been moved.</p>
+    <a href="index.html" class="btn btn-primary" style="margin-top: var(--space-md);">Return to Home</a>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

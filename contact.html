@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - [Your Name / Studio Name]</title>
+  <meta name="description" content="Get in touch for bookings and inquiries.">
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="page-transition">
+
+  <header class="header">
+    <div class="container-fluid nav">
+      <a href="index.html" class="logo">[Name]</a>
+      
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="gallery.html" class="nav-link">Portfolio</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link">Journal</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="gallery.html" class="nav-link">Portfolio</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="blog.html" class="nav-link">Journal</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+
+  <main>
+    <section class="section container" style="margin-top: var(--header-height);">
+      <div class="reveal text-center" style="margin-bottom: var(--space-xl);">
+        <h1>Let's Create</h1>
+        <p style="margin: 0 auto;">I take on a limited number of commissions each year to ensure the highest quality of work. Please fill out the form below or email me directly.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="reveal-left" style="padding-right: var(--space-lg);">
+          <div class="contact-info">
+            <h3 class="text-accent" style="font-size: 1rem;">Direct Email</h3>
+            <a href="mailto:hello@example.com" class="text-large">hello@example.com</a>
+          </div>
+          
+          <div class="contact-info">
+            <h3 class="text-accent" style="font-size: 1rem;">Studio</h3>
+            <p class="text-large" style="margin-bottom: 0;">123 Creative Studio Ave.</p>
+            <p class="text-large">New York, NY 10001</p>
+          </div>
+
+          <div class="contact-info">
+            <h3 class="text-accent" style="font-size: 1rem;">Socials</h3>
+            <div class="social-links" style="font-size: 1.25rem;">
+              <a href="#">Instagram</a> &nbsp;
+              <a href="#">Behance</a> &nbsp;
+              <a href="#">Pinterest</a>
+            </div>
+          </div>
+          
+          <!-- Geometric accent -->
+          <div style="width: 100px; height: 100px; border: 1px solid var(--color-accent); margin-top: var(--space-xl); position: relative;" class="spin-slow">
+            <div style="width: 50px; height: 50px; border: 1px solid var(--color-text); position: absolute; top: -10px; right: -10px;"></div>
+          </div>
+        </div>
+
+        <div class="reveal-right">
+          <form action="#" method="POST" class="contact-form">
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <input type="text" id="name" name="name" class="form-control" placeholder=" " required>
+                <label for="name" class="form-label">Full Name *</label>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" name="email" class="form-control" placeholder=" " required>
+                <label for="email" class="form-label">Email Address *</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <input type="text" id="subject" name="subject" class="form-control" placeholder=" ">
+              <label for="subject" class="form-label">Shoot Type / Subject</label>
+            </div>
+            
+            <div class="form-group">
+              <input type="date" id="date" name="date" class="form-control" placeholder=" ">
+              <label for="date" class="form-label">Event Date (if applicable)</label>
+            </div>
+
+            <div class="form-group">
+              <textarea id="message" name="message" class="form-control" placeholder=" " required></textarea>
+              <label for="message" class="form-label">Tell me about your vision... *</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <div class="footer-top">
+      <div class="footer-col reveal">
+        <h4>[Studio Name]</h4>
+        <p style="margin-bottom: 0;">Available worldwide.</p>
+        <p>Based in [City, Country]</p>
+      </div>
+      <div class="footer-col reveal reveal-delay-1">
+        <h4>Inquiries</h4>
+        <a href="mailto:hello@example.com">hello@example.com</a>
+      </div>
+      <div class="footer-col reveal reveal-delay-2">
+        <h4>Socials</h4>
+        <div class="social-links">
+          <a href="#">Instagram</a>
+          <a href="#">Behance</a>
+          <a href="#">Pinterest</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 [Your Name]. All rights reserved.</p>
+      <a href="#">Terms & Conditions</a>
+    </div>
+  </footer>
+
+  <script>
+    // Simple script to pre-fill subject based on URL params (e.g. from Services page)
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const subject = urlParams.get('subject');
+      if(subject) {
+        document.getElementById('subject').value = subject;
+      }
+    });
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/scroll.js"></script>
+</body>
+</html>
