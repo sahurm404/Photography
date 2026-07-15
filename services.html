@@ -56,7 +56,7 @@
         <div class="reveal-left">
           <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Portrait Session" loading="lazy" style="aspect-ratio: 4/5; object-fit: cover; width: 100%;">
         </div>
-        <div class="reveal-right" style="padding: 0 var(--space-lg);">
+        <div class="reveal-right desktop-px-lg mobile-no-padding mobile-pt-md">
           <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Portrait Session</h2>
           <div class="pricing-price" style="font-size: 2rem; color: var(--color-accent); margin-bottom: var(--space-md); font-family: var(--font-heading); font-weight: 800;">R450</div>
           <p>Perfect for individuals, couples, or small families wanting a high-end editorial feel.</p>
@@ -74,7 +74,7 @@
 
       <!-- Package 2: The Wedding (Reverse order on desktop) -->
       <div class="grid grid-2 items-center service-block" style="margin-bottom: var(--space-xl);">
-        <div class="reveal-left text-col" style="padding: 0 var(--space-lg); order: 2;">
+        <div class="reveal-left desktop-px-lg mobile-no-padding mobile-pt-md mobile-order-2">
           <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">The Wedding</h2>
           <div class="pricing-price" style="font-size: 2rem; color: var(--color-accent); margin-bottom: var(--space-md); font-family: var(--font-heading); font-weight: 800;">R3,200</div>
           <p>Comprehensive coverage of your special day, capturing every detail and emotion.</p>
@@ -88,17 +88,17 @@
           </ul>
           <a href="contact.html?subject=Wedding%20Inquiry" class="btn btn-primary">Inquire Now</a>
         </div>
-        <div class="reveal-right img-col" style="order: 1;">
+        <div class="reveal-right mobile-order-1">
           <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="The Wedding" loading="lazy" style="aspect-ratio: 4/5; object-fit: cover; width: 100%;">
         </div>
       </div>
       
       <!-- Package 3: Editorial -->
       <div class="grid grid-2 items-center service-block" style="margin-bottom: var(--space-xl);">
-        <div class="reveal-left img-col">
+        <div class="reveal-left">
           <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Editorial / Commercial" loading="lazy" style="aspect-ratio: 4/5; object-fit: cover; width: 100%;">
         </div>
-        <div class="reveal-right text-col" style="padding: 0 var(--space-lg);">
+        <div class="reveal-right desktop-px-lg mobile-no-padding mobile-pt-md">
           <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Editorial & Commercial</h2>
           <div class="pricing-price" style="font-size: 2rem; color: var(--color-accent); margin-bottom: var(--space-md); font-family: var(--font-heading); font-weight: 800;">Custom</div>
           <p>Tailored photography for brands, magazines, and commercial campaigns.</p>
@@ -114,14 +114,7 @@
         </div>
       </div>
 
-      <!-- Handle ordering for mobile -->
-      <style>
-        @media (max-width: 767px) {
-          .service-block .text-col { order: unset !important; padding: 0 !important; margin-top: var(--space-md); }
-          .service-block .img-col { order: unset !important; }
-          .service-block .reveal-right[style*="padding"] { padding: 0 !important; margin-top: var(--space-md); }
-        }
-      </style>
+
 
       <!-- Add-ons / A La Carte -->
       <div class="section-sm reveal" style="margin-top: var(--space-xl); background-color: var(--color-bg-alt); padding: var(--space-xl); border: 1px solid var(--color-border);">

@@ -29,3 +29,13 @@
   --max-width: 1400px;
   --header-height: 80px;
 }
+
+/* Mobile spacing overrides */
+@media (max-width: 767px) {
+  :root {
+    --space-md: 1.25rem;
+    --space-lg: 2.5rem;
+    --space-xl: 4rem;
+    --header-height: 64px;
+  }
+}
