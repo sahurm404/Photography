@@ -1,0 +1,96 @@
+{
+  "gallery": [
+    {
+      "id": "g1",
+      "category": "weddings",
+      "title": "The First Look",
+      "image": "Images/Wedd-1.jpg"
+    },
+    {
+      "id": "g2",
+      "category": "portraits",
+      "title": "Golden Hour",
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "g3",
+      "category": "editorial",
+      "title": "Form & Figure",
+      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "g4",
+      "category": "landscape",
+      "title": "Distant Peaks",
+      "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "g5",
+      "category": "weddings",
+      "title": "Details",
+      "image": "Images/Wedd-114.jpg"
+    },
+    {
+      "id": "g6",
+      "category": "portraits",
+      "title": "Studio Series",
+      "image": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "g7",
+      "category": "weddings",
+      "title": "Celebration",
+      "image": "Images/Wedd-116.jpg"
+    },
+    {
+      "id": "g8",
+      "category": "editorial",
+      "title": "Urban Contrast",
+      "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "g9",
+      "category": "landscape",
+      "title": "Wanderlust",
+      "image": "https://images.unsplash.com/photo-1476610182048-b716b8518aae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    }
+  ],
+  "journal": [
+    {
+      "id": "j1",
+      "category": "Weddings",
+      "date": "Oct 12, 2025",
+      "title": "A Tuscan Dream Wedding",
+      "excerpt": "Golden light, rolling hills, and an intimate celebration that felt like magic. See the highlights from E & J's beautiful day.",
+      "image": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "link": "#"
+    },
+    {
+      "id": "j2",
+      "category": "Editorial",
+      "date": "Sep 28, 2025",
+      "title": "Autumn Lookbook",
+      "excerpt": "Collaborating with local designers to capture the rich textures and tones of the new fall collection.",
+      "image": "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "link": "#"
+    },
+    {
+      "id": "j3",
+      "category": "Personal",
+      "date": "Aug 05, 2025",
+      "title": "Icelandic Highlands",
+      "excerpt": "A personal journey through the rugged, untouched landscapes of Iceland. Medium format film scans.",
+      "image": "https://images.unsplash.com/photo-1476610182048-b716b8518aae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "link": "#"
+    },
+    {
+      "id": "j4",
+      "category": "Behind The Scenes",
+      "date": "Jul 15, 2025",
+      "title": "What's In My Bag",
+      "excerpt": "A detailed breakdown of my go-to gear for an all-day wedding shoot, including backups and film setups.",
+      "image": "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "link": "#"
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - [Studio Name]</title>
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- Login Screen -->
+  <div id="login-screen" class="login-overlay">
+    <div class="login-box">
+      <h2>Admin Login</h2>
+      <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Please enter the password to access the dashboard.</p>
+      
+      <div class="form-group">
+        <input type="password" id="admin-password" class="form-control" placeholder=" ">
+        <label class="form-label">Password</label>
+      </div>
+      
+      <p id="login-error" style="color: #ff4444; font-size: 0.875rem; display: none; margin-bottom: 1rem;">Incorrect password.</p>
+      
+      <button id="login-btn" class="btn btn-primary" style="width: 100%;">Login</button>
+      <a href="index.html" style="display: block; text-align: center; margin-top: 1rem; color: var(--color-text-muted); font-size: 0.875rem;">Return to Website</a>
+    </div>
+  </div>
+
+  <!-- Dashboard Interface (Hidden until login) -->
+  <div id="dashboard-ui" class="dashboard-container" style="display: none;">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2 class="logo">[Name] Admin</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="sidebar-link active" data-tab="gallery">Manage Gallery</button>
+        <button class="sidebar-link" data-tab="journal">Manage Journal</button>
+      </nav>
+      <div class="sidebar-footer">
+        <button id="logout-btn" class="sidebar-link" style="color: var(--color-text-muted);">Logout</button>
+        <a href="index.html" class="sidebar-link" style="color: var(--color-text-muted); margin-top: 0.5rem;" target="_blank">View Live Site</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <h1>Dashboard</h1>
+        <div class="header-actions">
+          <button id="save-data-btn" class="btn btn-primary">
+            Save & Download JSON
+          </button>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        <p class="instruction-text">
+          <strong>How it works:</strong> Make your changes below. When finished, click "Save & Download JSON". 
+          Replace your local <code>data.json</code> file with the downloaded file and commit it to GitHub.
+        </p>
+
+        <!-- Gallery Tab -->
+        <div id="tab-gallery" class="tab-pane active">
+          <div class="flex justify-between items-center" style="margin-bottom: 1.5rem;">
+            <h2>Gallery Images</h2>
+            <button id="add-gallery-btn" class="btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;">+ Add New Image</button>
+          </div>
+          <div class="table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Title</th>
+                  <th>Category</th>
+                  <th style="width: 100px;">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="admin-gallery-list">
+                <!-- JS populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Journal Tab -->
+        <div id="tab-journal" class="tab-pane">
+          <div class="flex justify-between items-center" style="margin-bottom: 1.5rem;">
+            <h2>Journal Posts</h2>
+            <button id="add-journal-btn" class="btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;">+ Add New Post</button>
+          </div>
+          <div class="table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Cover</th>
+                  <th>Title</th>
+                  <th>Date</th>
+                  <th>Category</th>
+                  <th style="width: 100px;">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="admin-journal-list">
+                <!-- JS populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Edit Modal -->
+  <div id="edit-modal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modal-title">Edit Item</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="edit-form">
+          <!-- Dynamic Form Fields will be injected here by JS -->
+          <div id="dynamic-fields"></div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn close-modal" style="padding: 0.5rem 1rem;">Cancel</button>
+        <button type="button" id="save-modal-btn" class="btn btn-primary" style="padding: 0.5rem 1rem;">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
