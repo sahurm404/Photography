@@ -23,6 +23,7 @@ async function initDataFetch() {
     
     // Re-initialize animations and cursor events for new elements
     if (typeof initScrollReveals === 'function') initScrollReveals();
+    if (typeof initLightbox === 'function') initLightbox();
     rebindCursorEvents();
   } catch (err) {
     console.error('Failed to load data:', err);
@@ -34,10 +35,18 @@ function renderGallery(container, items) {
   items.forEach((item, index) => {
     // Add staggered delay classes for visual effect
     const delayClass = index % 3 === 1 ? 'reveal-delay-1' : (index % 3 === 2 ? 'reveal-delay-2' : '');
+    
+    // Check if it's a mini-album (more than 1 image)
+    const isAlbum = item.images && item.images.length > 1;
+    const albumData = isAlbum ? `data-album='${JSON.stringify(item.images)}'` : '';
+    const albumIndicator = isAlbum ? `<div class="album-indicator"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M8 3v18"></path></svg> ${item.images.length} Photos</div>` : '';
+    const coverImage = item.images && item.images.length > 0 ? item.images[0] : item.image;
+
     html += `
-      <a href="#" class="image-card gallery-item reveal ${delayClass}" data-category="${item.category.toLowerCase()}">
-        <img src="${item.image}" alt="${item.title}" loading="lazy">
+      <a href="#" class="image-card gallery-item reveal ${delayClass}" data-category="${item.category.toLowerCase()}" ${albumData}>
+        <img src="${coverImage}" alt="${item.title}" loading="lazy">
         <div class="image-overlay">
+          ${albumIndicator}
           <span class="image-category">${item.category}</span>
           <h3 class="image-title">${item.title}</h3>
         </div>

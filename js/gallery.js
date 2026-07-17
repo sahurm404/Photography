@@ -44,50 +44,73 @@ function initLightbox() {
   const lightbox = document.getElementById('lightbox');
   if (!lightbox) return;
 
-  const lightboxImg = lightbox.querySelector('img');
-  const closeBtn = lightbox.querySelector('.lightbox-close');
-  const prevBtn = lightbox.querySelector('.lightbox-prev');
-  const nextBtn = lightbox.querySelector('.lightbox-next');
+  // Clear existing listeners to prevent duplicates if called multiple times
+  const newLightbox = lightbox.cloneNode(true);
+  lightbox.parentNode.replaceChild(newLightbox, lightbox);
+  const lb = document.getElementById('lightbox');
+
+  const lightboxImg = lb.querySelector('img');
+  const closeBtn = lb.querySelector('.lightbox-close');
+  const prevBtn = lb.querySelector('.lightbox-prev');
+  const nextBtn = lb.querySelector('.lightbox-next');
   
-  const galleryImages = document.querySelectorAll('.gallery-item img');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  let currentAlbum = []; // Array of image URLs
   let currentIndex = 0;
 
   // Open Lightbox
-  galleryImages.forEach((img, index) => {
-    img.parentElement.addEventListener('click', (e) => {
+  galleryItems.forEach((item, index) => {
+    item.addEventListener('click', (e) => {
       e.preventDefault();
-      currentIndex = index;
-      openLightbox(img.src);
+      
+      const albumData = item.getAttribute('data-album');
+      if (albumData) {
+        currentAlbum = JSON.parse(albumData);
+        currentIndex = 0;
+      } else {
+        // Build global gallery of single images up to this point?
+        // Or just act as a single image. The user asked for mini-albums.
+        // For single items, let's keep them in a global array of singles, or just isolated to 1.
+        // To keep it simple and match standard behavior, if it's a single image, it's an album of 1.
+        const img = item.querySelector('img');
+        currentAlbum = [img.src];
+        currentIndex = 0;
+      }
+      
+      // Update UI for prev/next buttons
+      if (currentAlbum.length <= 1) {
+        if(prevBtn) prevBtn.style.display = 'none';
+        if(nextBtn) nextBtn.style.display = 'none';
+      } else {
+        if(prevBtn) prevBtn.style.display = 'block';
+        if(nextBtn) nextBtn.style.display = 'block';
+      }
+
+      openLightbox(currentAlbum[currentIndex]);
     });
   });
 
   function openLightbox(src) {
     lightboxImg.src = src;
-    lightbox.classList.add('active');
+    lb.classList.add('active');
     document.body.style.overflow = 'hidden'; // Prevent scrolling
   }
 
   function closeLightbox() {
-    lightbox.classList.remove('active');
+    lb.classList.remove('active');
     document.body.style.overflow = '';
   }
 
   function showNext() {
-    currentIndex = (currentIndex + 1) % galleryImages.length;
-    // skip hidden images (filtered out)
-    while(galleryImages[currentIndex].closest('.gallery-item').style.display === 'none') {
-        currentIndex = (currentIndex + 1) % galleryImages.length;
-    }
-    lightboxImg.src = galleryImages[currentIndex].src;
+    if (currentAlbum.length <= 1) return;
+    currentIndex = (currentIndex + 1) % currentAlbum.length;
+    lightboxImg.src = currentAlbum[currentIndex];
   }
 
   function showPrev() {
-    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-    // skip hidden images (filtered out)
-    while(galleryImages[currentIndex].closest('.gallery-item').style.display === 'none') {
-        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-    }
-    lightboxImg.src = galleryImages[currentIndex].src;
+    if (currentAlbum.length <= 1) return;
+    currentIndex = (currentIndex - 1 + currentAlbum.length) % currentAlbum.length;
+    lightboxImg.src = currentAlbum[currentIndex];
   }
 
   // Event Listeners
@@ -96,18 +119,28 @@ function initLightbox() {
   if(prevBtn) prevBtn.addEventListener('click', showPrev);
 
   // Close on outside click
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
+  lb.addEventListener('click', (e) => {
+    if (e.target === lb) {
       closeLightbox();
     }
   });
 
   // Keyboard navigation
-  document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('active')) return;
-    
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowRight') showNext();
-    if (e.key === 'ArrowLeft') showPrev();
-  });
+  // Need to use named function to remove listener if called multiple times, 
+  // but since we replace lightbox node, body listener might stack.
+  // Instead, attach to document but check if lb is active.
+  // It's safe to just attach once, but if initLightbox is called multiple times, we'll get multiple document listeners.
+  // We'll add a flag to window to prevent multiple keydown listeners.
+  if (!window.lightboxKeydownBound) {
+    document.addEventListener('keydown', (e) => {
+      const activeLb = document.getElementById('lightbox');
+      if (!activeLb || !activeLb.classList.contains('active')) return;
+      
+      if (e.key === 'Escape') activeLb.querySelector('.lightbox-close')?.click();
+      if (e.key === 'ArrowRight') activeLb.querySelector('.lightbox-next')?.click();
+      if (e.key === 'ArrowLeft') activeLb.querySelector('.lightbox-prev')?.click();
+    });
+    window.lightboxKeydownBound = true;
+  }
 }
+

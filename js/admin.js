@@ -106,7 +106,7 @@ function renderTables() {
   appData.gallery.forEach(item => {
     galleryTbody.innerHTML += `
       <tr>
-        <td><img src="${item.image}" class="img-preview" alt="preview"></td>
+        <td><img src="${item.images && item.images.length > 0 ? item.images[0] : item.image}" class="img-preview" alt="preview"></td>
         <td>${item.title}</td>
         <td><span style="text-transform: capitalize;">${item.category}</span></td>
         <td>
@@ -177,8 +177,24 @@ function openModal(type, data = null) {
         </select>
       </div>
       <div class="form-group">
-        <label>Image URL (or path e.g. Images/file.jpg)</label>
-        <input type="text" id="field-image" value="${data ? data.image : ''}" required>
+        <label>Cover Image URL (Required)</label>
+        <input type="text" id="field-image-0" value="${data && data.images && data.images[0] ? data.images[0] : (data ? data.image : '')}" required>
+      </div>
+      <div class="form-group">
+        <label>Additional Image 2 URL (Optional)</label>
+        <input type="text" id="field-image-1" value="${data && data.images && data.images[1] ? data.images[1] : ''}">
+      </div>
+      <div class="form-group">
+        <label>Additional Image 3 URL (Optional)</label>
+        <input type="text" id="field-image-2" value="${data && data.images && data.images[2] ? data.images[2] : ''}">
+      </div>
+      <div class="form-group">
+        <label>Additional Image 4 URL (Optional)</label>
+        <input type="text" id="field-image-3" value="${data && data.images && data.images[3] ? data.images[3] : ''}">
+      </div>
+      <div class="form-group">
+        <label>Additional Image 5 URL (Optional)</label>
+        <input type="text" id="field-image-4" value="${data && data.images && data.images[4] ? data.images[4] : ''}">
       </div>
     `;
   } else if (type === 'journal') {
@@ -225,7 +241,13 @@ function saveModalData() {
   if (editingType === 'gallery') {
     newItem.title = document.getElementById('field-title').value;
     newItem.category = document.getElementById('field-category').value;
-    newItem.image = document.getElementById('field-image').value;
+    const imgs = [];
+    for (let i = 0; i < 5; i++) {
+      const val = document.getElementById('field-image-' + i).value.trim();
+      if (val) imgs.push(val);
+    }
+    newItem.images = imgs;
+    newItem.image = imgs[0] || ''; // For backwards compatibility
   } else if (editingType === 'journal') {
     newItem.title = document.getElementById('field-title').value;
     newItem.category = document.getElementById('field-category').value;

@@ -250,8 +250,34 @@
 }
 
 .image-card:hover .image-title,
-.image-card:hover .image-category {
+.image-card:hover .image-category,
+.image-card:hover .album-indicator {
   transform: translateY(0);
+}
+
+.album-indicator {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  background-color: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: var(--color-bg);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-family: var(--font-heading);
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all var(--transition-normal);
+}
+
+.image-card:hover .album-indicator {
+  opacity: 1;
 }
 
 /* Footer */
